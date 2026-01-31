@@ -1,0 +1,231 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "JTS",
+  "scopeName": "source.jts",
+  "fileTypes": ["jts"],
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#keywords" },
+    { "include": "#storage" },
+    { "include": "#types" },
+    { "include": "#constants" },
+    { "include": "#operators" },
+    { "include": "#functions" },
+    { "include": "#classes" },
+    { "include": "#variables" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.jts",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.jts",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.jts",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.jts",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.jts",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.jts",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.template.jts",
+          "begin": "`",
+          "end": "`",
+          "patterns": [
+            {
+              "name": "constant.character.escape.jts",
+              "match": "\\\\."
+            },
+            {
+              "name": "meta.template.expression.jts",
+              "begin": "\\$\\{",
+              "end": "\\}",
+              "patterns": [
+                { "include": "$self" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.jts",
+          "match": "\\b(0x[0-9A-Fa-f]+|0b[01]+|0o[0-7]+|\\d+(\\.\\d+)?([eE][+-]?\\d+)?)\\b"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.jts",
+          "match": "\\b(もし|そうでなければもし|そうでなければ|繰り返し|各々|間|戻す|抜ける|続ける|試行|捕捉|最後に|投げる|if|else|for|while|return|break|continue|try|catch|finally|throw|switch|case|default|do)\\b"
+        },
+        {
+          "name": "keyword.control.import.jts",
+          "match": "\\b(入力|出力|から|として|既定|import|export|from|as|default)\\b"
+        },
+        {
+          "name": "keyword.operator.jts",
+          "match": "\\b(の中の|かつ|または|ではない|である|でない|of|in|instanceof|typeof|new|delete|void)\\b"
+        },
+        {
+          "name": "keyword.other.jts",
+          "match": "\\b(新規|自分|new|this|super)\\b"
+        }
+      ]
+    },
+    "storage": {
+      "patterns": [
+        {
+          "name": "storage.type.jts",
+          "match": "\\b(定数|変数|関数|クラス|接点|型|const|let|var|function|class|interface|type|enum)\\b"
+        },
+        {
+          "name": "storage.modifier.jts",
+          "match": "\\b(非同期|待機|静的|公開|非公開|保護|拡張|実装|async|await|static|public|private|protected|readonly|extends|implements|abstract)\\b"
+        },
+        {
+          "name": "storage.type.function.arrow.jts",
+          "match": "=>"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "support.type.primitive.jts",
+          "match": "\\b(文字列|数値|真偽値|無効|何でも|不明|絶対無|物体|string|number|boolean|void|any|unknown|never|object|null|undefined|symbol|bigint)\\b"
+        },
+        {
+          "name": "support.type.builtin.jts",
+          "match": "\\b(Array|Map|Set|Promise|Date|RegExp|Error|Object|Function|Symbol|BigInt)\\b"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.true.jts",
+          "match": "\\b(真|true)\\b"
+        },
+        {
+          "name": "constant.language.boolean.false.jts",
+          "match": "\\b(偽|false)\\b"
+        },
+        {
+          "name": "constant.language.null.jts",
+          "match": "\\b(無|null)\\b"
+        },
+        {
+          "name": "constant.language.undefined.jts",
+          "match": "\\b(未定義|undefined)\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.comparison.jts",
+          "match": "===|!==|==|!=|<=|>=|<|>"
+        },
+        {
+          "name": "keyword.operator.assignment.jts",
+          "match": "\\+=|-=|\\*=|/=|%=|\\|=|&=|\\^=|<<=|>>=|>>>="
+        },
+        {
+          "name": "keyword.operator.arithmetic.jts",
+          "match": "\\+\\+|--|\\+|-|\\*\\*|\\*|/|%"
+        },
+        {
+          "name": "keyword.operator.logical.jts",
+          "match": "&&|\\|\\||!"
+        },
+        {
+          "name": "keyword.operator.bitwise.jts",
+          "match": "&|\\||\\^|~|<<|>>|>>>"
+        },
+        {
+          "name": "keyword.operator.ternary.jts",
+          "match": "\\?|:"
+        },
+        {
+          "name": "keyword.operator.spread.jts",
+          "match": "\\.\\.\\."
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "entity.name.function.jts",
+          "match": "\\b([a-zA-Z_$\\u3040-\\u309F\\u30A0-\\u30FF\\u4E00-\\u9FFF][a-zA-Z0-9_$\\u3040-\\u309F\\u30A0-\\u30FF\\u4E00-\\u9FFF]*)\\s*(?=\\()"
+        },
+        {
+          "name": "support.function.builtin.jts",
+          "match": "\\b(表示|console\\.log|console\\.error|console\\.warn|parseInt|parseFloat|isNaN|isFinite|encodeURI|decodeURI|encodeURIComponent|decodeURIComponent)\\b"
+        },
+        {
+          "name": "support.function.method.array.jts",
+          "match": "\\.(写像|絞込|畳込|探索|全て|いずれか|含む|結合|逆順|整列|先頭|末尾|map|filter|reduce|find|every|some|includes|join|reverse|sort|push|pop|shift|unshift|slice|splice|concat|indexOf|forEach)\\b"
+        },
+        {
+          "name": "support.function.method.string.jts",
+          "match": "\\.(分割|含む|始まる|終わる|置換|全置換|除去|大文字|小文字|split|includes|startsWith|endsWith|replace|replaceAll|trim|toUpperCase|toLowerCase|substring|charAt|charCodeAt)\\b"
+        }
+      ]
+    },
+    "classes": {
+      "patterns": [
+        {
+          "name": "entity.name.type.class.jts",
+          "match": "(?<=クラス\\s+|class\\s+)[a-zA-Z_$\\u3040-\\u309F\\u30A0-\\u30FF\\u4E00-\\u9FFF][a-zA-Z0-9_$\\u3040-\\u309F\\u30A0-\\u30FF\\u4E00-\\u9FFF]*"
+        },
+        {
+          "name": "entity.name.function.constructor.jts",
+          "match": "\\b(構築|constructor)\\b"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.language.this.jts",
+          "match": "\\b(自分|this)\\b"
+        },
+        {
+          "name": "variable.language.super.jts",
+          "match": "\\b(super)\\b"
+        }
+      ]
+    }
+  }
+}
