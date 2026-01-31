@@ -1,6 +1,6 @@
 # JTS - 日本語 TypeScript
 
-[![npm version](https://badge.fury.io/js/%40modelgeek%2Fjts.svg)](https://www.npmjs.com/package/@model-geek/jts)
+[![npm version](https://badge.fury.io/js/%40modelgeek%2Fjts.svg)](https://www.npmjs.com/package/@modelgeek/jts)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 日本語で書けるプログラミング言語です。TypeScript のスーパーセットとして設計されており、日本語キーワードと英語キーワードを混在させることができます。
@@ -42,7 +42,7 @@ Object.defineProperty(Array.prototype, '写像', {
 ## インストール
 
 ```bash
-npm install -g @model-geek/jts
+npm install -g @modelgeek/jts
 ```
 
 **前提条件:** 以下のいずれかの TypeScript ランナーが必要です：
@@ -246,5 +246,5 @@ MIT License
 
 ## リンク
 
-- [npm パッケージ](https://www.npmjs.com/package/@model-geek/jts)
+- [npm パッケージ](https://www.npmjs.com/package/@modelgeek/jts)
 - [GitHub リポジトリ](https://github.com/model-geek/jts)
