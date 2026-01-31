@@ -1,0 +1,38 @@
+{
+  "name": "@modelgeek/jts",
+  "version": "0.1.0",
+  "description": "日本語で書ける TypeScript",
+  "main": "dist/cli.js",
+  "bin": {
+    "jts": "./bin/jts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "bun test"
+  },
+  "keywords": [
+    "typescript",
+    "japanese",
+    "education",
+    "programming-language"
+  ],
+  "author": "modelgeek",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/modelgeek/jts.git"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ]
+}
