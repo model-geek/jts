@@ -84,7 +84,7 @@ settings.json に追加：
 
 1. `Preferences` → `Editor` → `TextMate Bundles`
 2. `+` をクリック
-3. `editor/` ディレクトリを選択
+3. `editor/jts.tmbundle` ディレクトリを選択
 
 ### 方法 2: TypeScript として認識（簡易）
 
