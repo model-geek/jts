@@ -1,5 +1,5 @@
 {
-  "name": "@modelgeek/jts",
+  "name": "@model-geek/jts",
   "version": "0.1.0",
   "description": "日本語で書ける TypeScript",
   "main": "dist/cli.js",
@@ -17,11 +17,11 @@
     "education",
     "programming-language"
   ],
-  "author": "modelgeek",
+  "author": "model-geek",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/modelgeek/jts.git"
+    "url": "https://github.com/model-geek/jts.git"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

@@ -66,7 +66,7 @@ npm init -y
 
 ```json
 {
-  "name": "@modelgeek/jts",
+  "name": "@model-geek/jts",
   "version": "0.1.0",
   "description": "日本語で書ける TypeScript",
   "main": "dist/cli.js",
